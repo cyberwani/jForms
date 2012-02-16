@@ -1,9 +1,5 @@
 <?php
 
-	/**
-	 * This is run before the template is shown in order to process any form post data
-	 * and define what the form should look like on the page.
-	 */
 	function formbuilder_checkPOSTData()
 	{
 		global $wp_query, $_SERVER, $wpdb, $formbuilder_formDisplayArray;

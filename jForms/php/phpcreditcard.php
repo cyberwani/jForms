@@ -1,46 +1,4 @@
 <?php
-/*==============================================================================
-
-This routine checks the credit card number. The following checks are made:
-
-1. A number has been provided
-2. The number is a right length for the card
-3. The number has an appropriate prefix for the card
-4. The number has a valid modulus 10 number check digit if required
-
-If the validation fails an error is reported.
-
-The structure of credit card formats was gleaned from a variety of sources on 
-the web, although the best is probably on Wikepedia ("Credit card number"):
-
-  http://en.wikipedia.org/wiki/Credit_card_number
-
-Input parameters:
-            cardnumber           number on the card
-            cardname             name of card as defined in the card list below
-Output parameters:
-            cardnumber           number on the card
-            cardname             name of card as defined in the card list below
-
-Author:     John Gardner
-Date:       4th January 2005
-Updated:    26th February 2005  additional credit cards added
-            1st July 2006       multiple definition of Discovery card removed
-            27th Nov. 2006      Additional cards added from Wikipedia
-						8th Dec 2007				Problem with Solo card definition corrected
-						18th Jan 2008				Support for 18 digit Maestro cards added
-            26th Nov 2008       Support for 19 digit Maestro cards added
-            19th June 2009      Support for Laser debit cards
-						
-   
-if (isset($_GET['submitted'])) {
-  if (checkCreditCard ($_GET['CardNumber'], $_GET['CardType'], $ccerror, $ccerrortext)) {
-    $ccerrortext = 'This card has a valid format';
-  }
-}
-
-==============================================================================*/
-
 
 function formbuilder_checkCreditCard ($cardnumber, $cardname='', &$errornumber, &$errortext) {
 
